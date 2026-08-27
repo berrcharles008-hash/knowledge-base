@@ -25,6 +25,6 @@
 - [领域驱动设计 DDD](./arch/ddd.md)
 
 ### 测试与 DevOps
-- [单元测试与 Mock](./testing/unit-test.md)
-- [CI/CD 流水线](./testing/cicd.md)
-- [Docker 容器化](./testing/docker.md)
+- [单元测试与 Mock](./testing-devops/unit-test.md)
+- [CI/CD 流水线](./testing-devops/cicd.md)
+- [Docker 容器化](./testing-devops/docker.md)
