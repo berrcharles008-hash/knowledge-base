@@ -26,5 +26,5 @@
 
 ### 测试与 DevOps
 - [单元测试与 Mock](./testing/unit-test.md)
-- [CI/CD 流水线](./devops/cicd.md)
-- [Docker 容器化](./devops/docker.md)
+- [CI/CD 流水线](./testing/cicd.md)
+- [Docker 容器化](./testing/docker.md)
