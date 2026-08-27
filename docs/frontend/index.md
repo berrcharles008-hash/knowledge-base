@@ -1,27 +1,58 @@
-# Vue 前端知识
+# 前端技术
 
-## 目录
+## Vue 2 vs Vue 3
 
-### Vue 2 核心
-- 响应式原理深入 → [vue/vue2-reactivity.md](./vue/vue2-reactivity.md)
-- 生命周期详解 → [vue/vue2-lifecycle.md](./vue/vue2-lifecycle.md)
-- 组件通信方案对比 → [vue/vue2-component-communication.md](./vue/vue2-component-communication.md)
-- Vuex 设计与优化 → [vue/vuex.md](./vue/vuex.md)
-- Vue Router 进阶 → [vue/vue-router.md](./vue/vue-router.md)
+### 响应式原理
 
-### Vue 3 新特性
-- Composition API 详解 → [vue/vue3-composition-api.md](./vue/vue3-composition-api.md)
-- 响应式原理升级（Proxy） → [vue/vue3-proxy.md](./vue/vue3-proxy.md)
-- Teleport / Suspense → [vue/vue3-teleport-suspense.md](./vue/vue3-teleport-suspense.md)
-- Pinia 状态管理 → [vue/pinia.md](./vue/pinia.md)
+**Vue 2**：
+- 使用 `Object.defineProperty`
+- 无法检测对象属性的添加删除
+- 无法检测数组下标变化
 
-### TypeScript + Vue
-- TypeScript 基础 → [ts/basic.md](./ts/basic.md)
-- Vue + TS 最佳实践 → [ts/vue-ts.md](./ts/vue-ts.md)
-- 泛型与类型推导 → [ts/generics.md](./ts/generics.md)
+**Vue 3**：
+- 使用 `Proxy`
+- 可以监听对象和数组的所有变化
+- 性能更好
 
-### 工程化与性能
-- Vite 配置与原理 → [engineering/vite.md](./engineering/vite.md)
-- Webpack 基础概念 → [engineering/webpack.md](./engineering/webpack.md)
-- 前端性能优化清单 → [engineering/performance.md](./engineering/performance.md)
-- 组件设计模式 → [engineering/component-patterns.md](./engineering/component-patterns.md)
+### 组合式 API
+
+Vue 3 引入的组合式 API（Composition API）：
+- `setup()` 函数
+- `ref()`, `reactive()`
+- `computed()`, `watch()`
+- 更好的代码复用和逻辑组织
+
+### 面试要点
+
+1. **Vue 2 响应式限制**：需要提前声明属性
+2. **Vue 3 性能优化**：编译时优化、静态提升
+3. **生命周期钩子变化**：`beforeDestroy` → `beforeUnmount`
+
+## TypeScript
+
+### 基础类型
+
+```typescript
+let isDone: boolean = false;
+let decimal: number = 6;
+let color: string = "blue";
+let list: number[] = [1, 2, 3];
+let tuple: [string, number] = ["hello", 10];
+```
+
+### 接口与类型
+
+```typescript
+interface User {
+  name: string;
+  age: number;
+}
+
+type Status = 'pending' | 'success' | 'failed';
+```
+
+### 面试要点
+
+1. **interface vs type**：接口可合并，类型不能
+2. **泛型**：`<T>` 类型参数
+3. **装饰器**：类的元编程

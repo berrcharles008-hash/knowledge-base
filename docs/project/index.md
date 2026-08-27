@@ -1,15 +1,30 @@
-# 项目实战案例
+# 项目实战
 
-## 目录
+## PIVAS 静配系统
 
-### PIVAS 静配系统
-- [批次标签双签规则设计](./pivas/dual-sign.md)
-- [医嘱状态机设计](./pivas/order-state-machine.md)
-- [主药溶媒识别规则](./pivas/main-drug-identify.md)
-- [数据对账机制](./pivas/reconciliation.md)
-- [FRX 报表 ColSpan 踩坑](./pivas/frx-colspan.md)
+### 项目背景
 
-### 技术难点复盘
-- [如何定位内存泄漏](./troubleshoot/memory-leak.md)
-- [SQL 慢查询优化案例](./troubleshoot/slow-sql.md)
-- [分布式锁选型与实践](./troubleshoot/distributed-lock.md)
+医院静脉用药调配中心管理系统，用于静脉用药的集中调配和管理。
+
+### 核心模块
+
+1. **医嘱接收**：从 HIS 系统接收用药医嘱
+2. **排药确认**：药师审核、确认医嘱
+3. **批次管理**：按病区、时间创建调配批次
+4. **扫码调配**：PDA 扫码确认药品
+5. **配送管理**：配送至病区、签收确认
+
+### 技术要点
+
+- **.NET Core WebAPI**：后端接口
+- **Vue 3**：前端框架
+- **SQL Server**：数据库
+- **Redis**：缓存、会话管理
+- **RabbitMQ**：消息队列（医嘱同步）
+- **PDA 移动端**：扫码调配
+
+### 难点与解决方案
+
+1. **高并发扫码**：Redis 分布式锁
+2. **数据一致性**：事务 + 消息队列最终一致
+3. **性能优化**：分页查询、索引优化、缓存热点数据
