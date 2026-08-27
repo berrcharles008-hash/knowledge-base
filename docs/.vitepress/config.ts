@@ -1,4 +1,4 @@
-import { defineConfig, head } from 'vitepress'
+import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: '技术知识库',
@@ -6,7 +6,8 @@ export default defineConfig({
   // 禁用死链接检查
   markdown: {
     config: (md) => {
-      md.disableState('linkCheck')
+      // 移除所有链接规则，禁用死链接检查
+      md.linkRules = []
     }
   },
   themeConfig: {
